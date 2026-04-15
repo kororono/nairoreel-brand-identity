@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nairoreel Productions — Brand Kit V1</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000;
+    --midnight: #180161;
+    --violet: #4F1787;
+    --red: #EA1821;
+    --orange: #FB773C;
+    --pink: #EB3678;
+    --white: #FFFFFF;
+    --off-white: #F2F0ED;
+    --dark-surface: #0A0A0A;
+    --dark-card: #111111;
+    --dark-border: #1E1E1E;
+    --muted: #555555;
+    --grain-opacity: 0.04;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* GRAIN TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* LAYOUT */
+  .page { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+  section { padding: 100px 0; border-bottom: 1px solid var(--dark-border); }
+  section:last-child { border-bottom: none; }
+
+  /* COVER */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--dark-border);
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(234,24,33,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .cover-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .cover-meta {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .cover-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0;
+  }
+
+  .cover-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 8vw, 110px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .cover-title em {
+    font-style: italic;
+    color: var(--red);
+  }
+
+  .cover-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 32px;
+    max-width: 400px;
+  }
+
+  .cover-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .cover-version {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .cover-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--red);
+  }
+
+  /* SECTION HEADERS */
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--dark-border);
+    max-width: 80px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .section-body {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888;
+    line-height: 1.8;
+    max-width: 560px;
+  }
+
+  /* BRAND PHILOSOPHY */
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--dark-border);
+    margin-top: 60px;
+  }
+
+  .philosophy-card {
+    background: var(--dark-card);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .philosophy-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 24px; right: 32px;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--dark-border);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .philosophy-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .philosophy-card p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.8;
+  }
+
+  .philosophy-card.accent {
+    background: var(--red);
+  }
+
+  .philosophy-card.accent::before { color: rgba(0,0,0,0.15); }
+  .philosophy-card.accent p { color: rgba(255,255,255,0.75); }
+
+  /* COLOUR SYSTEM */
+  .colour-primary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2px;
+    margin-top: 60px;
+    height: 280px;
+  }
+
+  .colour-swatch {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .colour-swatch-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .colour-swatch-hex {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .colour-swatch-role {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-top: 4px;
+  }
+
+  .swatch-black { background: #000000; border: 1px solid #222; }
+  .swatch-red { background: #EA1821; }
+  .swatch-white { background: #FFFFFF; color: #000; }
+
+  .colour-secondary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 2px;
+    height: 140px;
+  }
+
+  .swatch-midnight { background: #180161; }
+  .swatch-violet { background: #4F1787; }
+  .swatch-orange { background: #FB773C; }
+  .swatch-pink { background: #EB3678; }
+
+  .colour-usage {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .colour-usage-item {
+    padding: 32px 28px;
+    border: 1px solid var(--dark-border);
+  }
+
+  .colour-usage-dot {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  .colour-usage-item h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .colour-usage-item p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  /* TYPOGRAPHY */
+  .type-showcase {
+    margin-top: 60px;
+    border: 1px solid var(--dark-border);
+  }
+
+  .type-row {
+    padding: 48px 48px;
+    border-bottom: 1px solid var(--dark-border);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .type-row:last-child { border-bottom: none; }
+
+  .type-meta { }
+
+  .type-meta-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .type-meta-name {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .type-meta-detail {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .type-display-sample {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .type-display-italic {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 54px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.1;
+    color: #888;
+  }
+
+  .type-body-sample {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #aaa;
+    max-width: 480px;
+  }
+
+  .type-caps-sample {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* CASING RULES */
+  .casing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+    background: var(--dark-border);
+  }
+
+  .casing-card {
+    background: var(--dark-card);
+    padding: 40px 32px;
+  }
+
+  .casing-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+
+  .casing-card-example {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+  .casing-card p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* INSTAGRAM GRID SYSTEM */
+  .grid-philosophy {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .grid-mock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+
+  .grid-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Row 1 — dark red campaign */
+  .r1 { background: #0D0D0D; }
+  .r1-accent { background: var(--red); }
+
+  /* Row 2 — midnight campaign */
+  .r2 { background: #0A0016; }
+  .r2-accent { background: #180161; }
+
+  /* Row 3 — neutral dark */
+  .r3 { background: #111; }
+
+  .grid-cell-label {
+    position: absolute;
+    bottom: 8px; left: 8px;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    opacity: 0.5;
+  }
+
+  .row-indicator {
+    position: absolute;
+    right: 6px; top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    background: var(--red);
+    opacity: 0;
+  }
+
+  .grid-rules { }
+
+  .grid-rule-item {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--dark-border);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .grid-rule-item:last-child { border-bottom: none; }
+
+  .grid-rule-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--red);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 32px;
+  }
+
+  .grid-rule-text h4 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .grid-rule-text p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* POST TYPES */
+  .post-types {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: var(--dark-border);
+  }
+
+  .post-type-card {
+    background: var(--dark-card);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .post-type-thumb {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .post-type-thumb::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+  }
+
+  .post-type-a {
+    background: linear-gradient(135deg, #0D0D0D 0%, #1a0000 100%);
+  }
+
+  .post-type-b {
+    background: linear-gradient(135deg, #0A0016 0%, #180161 100%);
+  }
+
+  .post-type-c {
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+  }
+
+  .post-type-tag {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .post-type-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .post-type-bar {
+    width: 32px; height: 2px;
+    background: var(--red);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .post-type-info {
+    padding: 24px;
+  }
+
+  .post-type-info h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .post-type-info p {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* TEXTURE + GRAPHIC ELEMENTS */
+  .elements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: var(--dark-border);
+  }
+
+  .element-demo {
+    background: var(--dark-card);
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .element-visual {
+    width: 80px; height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .grain-demo {
+    width: 80px; height: 80px;
+    background: #1a1a1a;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+  }
+
+  .line-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 80px;
+  }
+
+  .line-demo span {
+    display: block;
+    height: 1px;
+    background: var(--white);
+  }
+
+  .line-demo span:nth-child(2) { width: 60%; background: var(--red); }
+  .line-demo span:nth-child(3) { width: 40%; }
+
+  .typo-demo {
+    text-align: center;
+  }
+
+  .typo-demo .big {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .typo-demo .small {
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  .geo-demo {
+    position: relative;
+    width: 80px; height: 80px;
+  }
+
+  .geo-demo::before {
+    content: '';
+    position: absolute;
+    top: 10px; left: 10px;
+    width: 60px; height: 60px;
+    border: 1px solid var(--red);
+  }
+
+  .geo-demo::after {
+    content: '';
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 60px; height: 60px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .element-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555;
+    text-align: center;
+  }
+
+  /* DON'T DO */
+  .donts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: var(--dark-border);
+  }
+
+  .dont-card {
+    background: var(--dark-card);
+    padding: 40px;
+    position: relative;
+  }
+
+  .dont-card::before {
+    content: '✕';
+    position: absolute;
+    top: 20px; right: 24px;
+    font-size: 16px;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .dont-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .dont-card p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  /* FOOTER */
+  .brand-footer {
+    padding: 80px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .footer-meta {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  .red { color: var(--red); }
+  .italic { font-style: italic; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .page { padding: 0 24px; }
+    .cover { padding: 40px 24px; }
+    .philosophy-grid { grid-template-columns: 1fr; }
+    .colour-primary { grid-template-columns: 1fr 1fr; height: auto; }
+    .colour-primary .colour-swatch:first-child { grid-column: span 2; height: 200px; }
+    .colour-secondary { grid-template-columns: repeat(2,1fr); }
+    .colour-usage { grid-template-columns: 1fr; }
+    .type-row { grid-template-columns: 1fr; gap: 24px; }
+    .casing-grid { grid-template-columns: 1fr; }
+    .grid-philosophy { grid-template-columns: 1fr; }
+    .post-types { grid-template-columns: 1fr; }
+    .elements-grid { grid-template-columns: repeat(2,1fr); }
+    .donts-grid { grid-template-columns: 1fr; }
+    .brand-footer { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-meta { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-logo">Nairoreel Productions</div>
+    <div class="cover-meta">Brand Kit<br>Visual Identity System</div>
+  </div>
+  <div class="cover-center">
+    <div class="cover-eyebrow">Visual Identity System</div>
+    <div class="cover-title">Brand<br><em>Kit</em><br>V1</div>
+    <div class="cover-subtitle">Colour · Typography · Grid System · Design Philosophy</div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-version">Version 1.0 · 2026 · Nairobi, Kenya</div>
+    <div class="cover-rule"></div>
+  </div>
+</div>
+
+<!-- BRAND PHILOSOPHY -->
+<section>
+  <div class="page">
+    <div class="section-label">01 — Philosophy</div>
+    <h2 class="section-title">Design<br><em style="font-family:'Playfair Display',serif;font-style:italic;">Philosophy</em></h2>
+    <p class="section-body">Every design decision at Nairoreel is made with intention. Nothing is arbitrary. The visual language we build exists to communicate one thing above all else — that this studio operates at the intersection of cinematic craft and creative precision.</p>
+
+    <div class="philosophy-grid">
+      <div class="philosophy-card" data-num="1">
+        <h3>Dark by Default</h3>
+        <p>Our canvas is dark. Not as a trend — as a conviction. Dark backgrounds command attention, create depth, and allow every element of colour and light to carry weight. We design in darkness so that our accents ignite.</p>
+      </div>
+      <div class="philosophy-card accent" data-num="2">
+        <h3>Intentional Contrast</h3>
+        <p>Racing Red (#EA1821) is not decoration. It is punctuation. It appears only where it earns its place — to direct the eye, mark importance, and signal that Nairoreel was here.</p>
+      </div>
+      <div class="philosophy-card" data-num="3">
+        <h3>Editorial Restraint</h3>
+        <p>We resist the urge to fill. Negative space is not emptiness — it is breathing room for the work. Every element on a canvas must justify its presence. If it doesn't add, it subtracts.</p>
+      </div>
+      <div class="philosophy-card" data-num="4">
+        <h3>Grid as Narrative</h3>
+        <p>Our Instagram grid is not a collection of posts. It is a designed surface. Each post is a frame in a larger story. The grid must always feel curated, cohesive, and directional — like a magazine spread, not a bulletin board.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLOUR SYSTEM -->
+<section>
+  <div class="page">
+    <div class="section-label">02 — Colour</div>
+    <h2 class="section-title">Colour<br><em style="font-family:'Playfair Display',serif;font-style:italic;">System</em></h2>
+    <p class="section-body">Three tiers of colour. Primary colours define every touchpoint. Secondary colours add depth in specific contexts. Reserved colours appear only when a project's identity demands them.</p>
+
+    <div class="colour-primary">
+      <div class="colour-swatch swatch-black">
+        <div class="colour-swatch-name">Void Black</div>
+        <div class="colour-swatch-hex">#000000</div>
+        <div class="colour-swatch-role">Primary Background</div>
+      </div>
+      <div class="colour-swatch swatch-red">
+        <div class="colour-swatch-name">Racing Red</div>
+        <div class="colour-swatch-hex">#EA1821</div>
+        <div class="colour-swatch-role">Primary Accent</div>
+      </div>
+      <div class="colour-swatch swatch-white">
+        <div class="colour-swatch-name">Studio White</div>
+        <div class="colour-swatch-hex">#FFFFFF</div>
+        <div class="colour-swatch-role">Primary Text</div>
+      </div>
+    </div>
+
+    <div class="colour-secondary">
+      <div class="colour-swatch swatch-midnight">
+        <div class="colour-swatch-name">Midnight</div>
+        <div class="colour-swatch-hex">#180161</div>
+        <div class="colour-swatch-role">Secondary</div>
+      </div>
+      <div class="colour-swatch swatch-violet">
+        <div class="colour-swatch-name">Violet</div>
+        <div class="colour-swatch-hex">#4F1787</div>
+        <div class="colour-swatch-role">Secondary</div>
+      </div>
+      <div class="colour-swatch swatch-orange">
+        <div class="colour-swatch-name">Ember</div>
+        <div class="colour-swatch-hex">#FB773C</div>
+        <div class="colour-swatch-role">Reserved</div>
+      </div>
+      <div class="colour-swatch swatch-pink">
+        <div class="colour-swatch-name">Signal</div>
+        <div class="colour-swatch-hex">#EB3678</div>
+        <div class="colour-swatch-role">Reserved</div>
+      </div>
+    </div>
+
+    <div class="colour-usage">
+      <div class="colour-usage-item">
+        <div class="colour-usage-dot" style="background:#000;border:1px solid #333;"></div>
+        <h4>Primary — Daily Use</h4>
+        <p>Black, Racing Red, and White are used on every post, every design, every touchpoint. These three form the permanent visual signature of Nairoreel.</p>
+      </div>
+      <div class="colour-usage-item">
+        <div class="colour-usage-dot" style="background:linear-gradient(135deg,#180161,#4F1787);"></div>
+        <h4>Secondary — Depth &amp; Dimension</h4>
+        <p>Midnight and Violet are used for gradient washes, background variation, and atmospheric depth. They support the primary palette without replacing it.</p>
+      </div>
+      <div class="colour-usage-item">
+        <div class="colour-usage-dot" style="background:linear-gradient(135deg,#FB773C,#EB3678);"></div>
+        <h4>Reserved — Project Specific</h4>
+        <p>Ember and Signal are reserved for client projects or campaigns whose identity specifically calls for these tones. Never used as part of the default grid language.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section>
+  <div class="page">
+    <div class="section-label">03 — Typography</div>
+    <h2 class="section-title">Type<br><em style="font-family:'Playfair Display',serif;font-style:italic;">System</em></h2>
+    <p class="section-body">Two fonts. One hierarchy. Playfair Display carries the editorial weight — dramatic, high-contrast, unmistakably deliberate. Montserrat handles the precision work — clear, structured, versatile. Together they define the Nairoreel voice.</p>
+
+    <div class="type-showcase">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Display</div>
+          <div class="type-meta-name">Playfair Display</div>
+          <div class="type-meta-detail">Weight: Black 900<br>Use: Headlines, post titles, hero text, pull quotes</div>
+        </div>
+        <div class="type-display-sample">
+          The Frame<br>Is the Story.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Display Italic</div>
+          <div class="type-meta-name">Playfair Display</div>
+          <div class="type-meta-detail">Weight: Regular 400 Italic<br>Use: Emphasis, contrast moments, subheadings</div>
+        </div>
+        <div class="type-display-italic">
+          "Craft that speaks<br>before it's explained."
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Body</div>
+          <div class="type-meta-name">Montserrat</div>
+          <div class="type-meta-detail">Weight: Regular 400<br>Use: Captions, descriptions, supporting text</div>
+        </div>
+        <div class="type-body-sample">
+          Nairoreel Productions is a 3D and video production studio based in Nairobi. We craft visual experiences that are built with intention — from concept to final frame.
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Label / UI</div>
+          <div class="type-meta-name">Montserrat</div>
+          <div class="type-meta-detail">Weight: Bold 700<br>Tracking: +0.4em · All Caps<br>Use: Labels, tags, eyebrows, categories</div>
+        </div>
+        <div class="type-caps-sample">
+          Visual Production · Nairobi, Kenya · Est. 2020
+        </div>
+      </div>
+    </div>
+
+    <!-- CASING RULES -->
+    <div style="margin-top:60px;">
+      <div class="section-label" style="margin-bottom:8px;">Casing Rules</div>
+      <p class="section-body" style="margin-bottom:0;">Casing is context-dependent. Use the right case for the right moment.</p>
+    </div>
+
+    <div class="casing-grid">
+      <div class="casing-card">
+        <div class="casing-card-label">Title Case</div>
+        <div class="casing-card-example">The Art of Motion</div>
+        <p>Used for project titles, campaign names, and main post headlines. Carries weight and gravitas. Default for Playfair Display headlines.</p>
+      </div>
+      <div class="casing-card">
+        <div class="casing-card-label">ALL CAPS</div>
+        <div class="casing-card-example" style="font-family:'Montserrat',sans-serif;font-size:16px;letter-spacing:0.2em;">VISUAL PRODUCTION<br>NAIROBI</div>
+        <p>Used exclusively for labels, tags, categories, and Montserrat UI text. Never used on Playfair Display headlines — it loses its character.</p>
+      </div>
+      <div class="casing-card">
+        <div class="casing-card-label">Sentence case</div>
+        <div class="casing-card-example" style="font-family:'Playfair Display',serif;font-size:20px;font-weight:400;font-style:italic;">Crafted with intent.</div>
+        <p>Used for captions, body copy, pull quotes in italic. Feels conversational and editorial. Pairs well with the italic weight of Playfair.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM GRID SYSTEM -->
+<section>
+  <div class="page">
+    <div class="section-label">04 — Instagram</div>
+    <h2 class="section-title">Grid<br><em style="font-family:'Playfair Display',serif;font-style:italic;">System</em></h2>
+    <p class="section-body">The Instagram grid is Nairoreel's live portfolio. It must function as a single designed surface — not a feed of individual posts. Two levels of cohesion govern everything we publish.</p>
+
+    <div class="grid-philosophy">
+      <div>
+        <!-- MOCK GRID -->
+        <div style="margin-bottom:12px;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:#555;">Grid Preview Mock</div>
+        <div class="grid-mock">
+          <!-- Row 1 — Red campaign -->
+          <div class="grid-cell r1-accent">
+            <div class="grid-cell-label">R1·A</div>
+          </div>
+          <div class="grid-cell r1">
+            <div style="font-family:'Playfair Display',serif;font-size:11px;font-weight:700;padding:8px;text-align:center;line-height:1.3;">Brand<br><em>Film</em></div>
+            <div class="grid-cell-label">R1·B</div>
+          </div>
+          <div class="grid-cell r1-accent" style="opacity:0.7;">
+            <div class="grid-cell-label">R1·C</div>
+          </div>
+          <!-- Row 2 — Midnight campaign -->
+          <div class="grid-cell r2">
+            <div style="font-family:'Playfair Display',serif;font-size:10px;font-style:italic;padding:8px;text-align:center;">3D<br>Render</div>
+            <div class="grid-cell-label">R2·A</div>
+          </div>
+          <div class="grid-cell r2-accent">
+            <div class="grid-cell-label">R2·B</div>
+          </div>
+          <div class="grid-cell r2">
+            <div class="grid-cell-label">R2·C</div>
+          </div>
+          <!-- Row 3 — Standalone posts -->
+          <div class="grid-cell r3">
+            <div style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#555;padding:8px;text-align:center;">Project<br>Reveal</div>
+            <div class="grid-cell-label">R3·A</div>
+          </div>
+          <div class="grid-cell r3" style="border-left:2px solid var(--red);">
+            <div class="grid-cell-label">R3·B</div>
+          </div>
+          <div class="grid-cell r3">
+            <div class="grid-cell-label">R3·C</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;font-size:10px;color:#444;line-height:1.7;">
+          Each row shares a colour identity. Rows differ from each other. The overall grid still feels unified.
+        </div>
+      </div>
+
+      <div class="grid-rules">
+        <div class="grid-rule-item">
+          <div class="grid-rule-num">1</div>
+          <div class="grid-rule-text">
+            <h4>Row-Level Identity</h4>
+            <p>When possible, three posts in a row share the same colour treatment, graphic language, and visual tone. They form a mini-campaign — one cohesive visual unit.</p>
+          </div>
+        </div>
+        <div class="grid-rule-item">
+          <div class="grid-rule-num">2</div>
+          <div class="grid-rule-text">
+            <h4>Grid-Level Vibe</h4>
+            <p>Even when rows differ from each other, every post must still feel like it belongs to the same studio. Dark base, red accent, consistent typography — these are non-negotiable at every level.</p>
+          </div>
+        </div>
+        <div class="grid-rule-item">
+          <div class="grid-rule-num">3</div>
+          <div class="grid-rule-text">
+            <h4>Design Everything</h4>
+            <p>No raw images. No undesigned video thumbnails. Every post — image or video — must have a graphic design layer applied before publishing. The design is the first impression.</p>
+          </div>
+        </div>
+        <div class="grid-rule-item">
+          <div class="grid-rule-num">4</div>
+          <div class="grid-rule-text">
+            <h4>No Logo on Posts</h4>
+            <p>The page itself is the brand. Plastering the logo on every post reduces its authority. The bio and overall grid identity do the work. Reserve the logo for external use.</p>
+          </div>
+        </div>
+        <div class="grid-rule-item">
+          <div class="grid-rule-num">5</div>
+          <div class="grid-rule-text">
+            <h4>Variety With Unity</h4>
+            <p>The grid should breathe — not monotonous repetition, not chaotic randomness. Different rows can have different moods. But the Nairoreel signature is always present.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POST TYPES -->
+<section>
+  <div class="page">
+    <div class="section-label">05 — Post Types</div>
+    <h2 class="section-title">Post<br><em style="font-family:'Playfair Display',serif;font-style:italic;">Taxonomy</em></h2>
+    <p class="section-body">Three categories of posts. Each has a defined treatment. Consistency within categories builds recognition across the grid.</p>
+
+    <div class="post-types">
+      <div class="post-type-card">
+        <div class="post-type-thumb post-type-a">
+          <div class="post-type-tag">Type 01</div>
+          <div class="post-type-bar"></div>
+          <div class="post-type-title">Video<br>Thumbnail</div>
+        </div>
+        <div class="post-type-info">
+          <h4>Video Project</h4>
+          <p>Custom-designed thumbnail — never an auto-generated frame. Must include the project title in Playfair Display, a red accent element, and dark overlay treatment on any footage used.</p>
+        </div>
+      </div>
+      <div class="post-type-card">
+        <div class="post-type-thumb post-type-b">
+          <div class="post-type-tag">Type 02</div>
+          <div class="post-type-bar"></div>
+          <div class="post-type-title">Image<br>Post</div>
+        </div>
+        <div class="post-type-info">
+          <h4>Image / Photo</h4>
+          <p>The first image in any image post must have a graphic design layer — typography, colour wash, or compositional overlay. Raw photographs without design treatment are not published to the grid.</p>
+        </div>
+      </div>
+      <div class="post-type-card">
+        <div class="post-type-thumb post-type-c">
+          <div class="post-type-tag">Type 03</div>
+          <div class="post-type-bar"></div>
+          <div class="post-type-title">Studio<br>Content</div>
+        </div>
+        <div class="post-type-info">
+          <h4>Studio / Brand Post</h4>
+          <p>Announcements, behind-the-scenes, quotes, and studio updates. These are full graphic design compositions — no photography required. Bold typography is the primary design element.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAPHIC ELEMENTS -->
+<section>
+  <div class="page">
+    <div class="section-label">06 — Elements</div>
+    <h2 class="section-title">Graphic<br><em style="font-family:'Playfair Display',serif;font-style:italic;">Elements</em></h2>
+    <p class="section-body">Four recurring visual elements that appear across posts. Not every post uses all four — but every post uses at least one. These are what make the grid feel designed.</p>
+
+    <div class="elements-grid">
+      <div class="element-demo">
+        <div class="element-visual">
+          <div class="grain-demo"></div>
+        </div>
+        <div class="element-label">Grain Texture</div>
+      </div>
+      <div class="element-demo">
+        <div class="element-visual">
+          <div class="line-demo">
+            <span style="width:100%"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="element-label">Rule Lines</div>
+      </div>
+      <div class="element-demo">
+        <div class="element-visual">
+          <div class="typo-demo">
+            <div class="big">NR</div>
+            <div class="small">Productions</div>
+          </div>
+        </div>
+        <div class="element-label">Bold Type</div>
+      </div>
+      <div class="element-demo">
+        <div class="element-visual">
+          <div class="geo-demo"></div>
+        </div>
+        <div class="element-label">Geometry</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO AVOID -->
+<section>
+  <div class="page">
+    <div class="section-label">07 — Restrictions</div>
+    <h2 class="section-title">What We<br><em style="font-family:'Playfair Display',serif;font-style:italic;">Don't Do</em></h2>
+    <p class="section-body">A brand is defined as much by what it refuses as by what it embraces. These are the violations that break the Nairoreel visual identity.</p>
+
+    <div class="donts-grid">
+      <div class="dont-card">
+        <h4>Raw, Undesigned Posts</h4>
+        <p>No photograph, video frame, or piece of content is published to the grid without a graphic design layer. Every post passes through intentional design before going live.</p>
+      </div>
+      <div class="dont-card">
+        <h4>Light Backgrounds by Default</h4>
+        <p>Light backgrounds may be used occasionally for contrast — but never as the default. A grid dominated by white or light tones contradicts the cinematic identity of Nairoreel.</p>
+      </div>
+      <div class="dont-card">
+        <h4>Accent Colour Overuse</h4>
+        <p>Racing Red loses its power when it appears everywhere. It is an accent — not a background, not a fill, not a habit. It earns its placement by being used with discipline.</p>
+      </div>
+      <div class="dont-card">
+        <h4>Random Font Usage</h4>
+        <p>Introducing new fonts outside of Playfair Display and Montserrat without a deliberate design decision is not permitted. The two-font system is the system. Exceptions require intention and team sign-off.</p>
+      </div>
+      <div class="dont-card">
+        <h4>Inconsistent Grid Rows</h4>
+        <p>Publishing a post without considering how it sits in the grid — what row it belongs to, what the neighbouring posts look like — breaks the grid-as-canvas philosophy.</p>
+      </div>
+      <div class="dont-card">
+        <h4>Generic Templates</h4>
+        <p>Using unmodified Canva templates without customisation to the Nairoreel colour system, typography, and design language produces generic output that dilutes the brand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="brand-footer">
+  <div class="footer-logo">Nairoreel <span class="red italic">Productions</span></div>
+  <div class="footer-meta">Brand Kit V1 · 2026<br>For internal use · Subject to revision</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nairoreel Productions — Brand Kit V2</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000;
+    --midnight: #180161;
+    --violet: #4F1787;
+    --red: #EA1821;
+    --orange: #FB773C;
+    --pink: #EB3678;
+    --white: #FFFFFF;
+    --off-white: #F2F0ED;
+    --dark-surface: #0A0A0A;
+    --dark-card: #111111;
+    --dark-border: #1E1E1E;
+    --muted: #555555;
+    --grain-opacity: 0.04;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    opacity: var(--grain-opacity);
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  .page { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+  section { padding: 100px 0; border-bottom: 1px solid var(--dark-border); }
+  section:last-child { border-bottom: none; }
+
+  /* COVER */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--dark-border);
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(234,24,33,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+
+  .cover-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .cover-meta {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .cover-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0;
+  }
+
+  .cover-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 8vw, 110px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .cover-title em { font-style: italic; color: var(--red); }
+
+  .cover-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 32px;
+    max-width: 400px;
+  }
+
+  .cover-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+
+  .cover-version {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .cover-rule { width: 60px; height: 1px; background: var(--red); }
+
+  /* SECTION HEADERS */
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--dark-border);
+    max-width: 80px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .section-body {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888;
+    line-height: 1.8;
+    max-width: 560px;
+  }
+
+  /* PHILOSOPHY */
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--dark-border);
+    margin-top: 60px;
+  }
+
+  .philosophy-card {
+    background: var(--dark-card);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .philosophy-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 24px; right: 32px;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--dark-border);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .philosophy-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .philosophy-card p { font-size: 13px; color: #777; line-height: 1.8; }
+
+  .philosophy-card.accent { background: var(--red); }
+  .philosophy-card.accent::before { color: rgba(0,0,0,0.15); }
+  .philosophy-card.accent p { color: rgba(255,255,255,0.75); }
+
+  /* COLOURS */
+  .colour-primary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2px;
+    margin-top: 60px;
+    height: 280px;
+  }
+
+  .colour-swatch {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .colour-swatch-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .colour-swatch-hex {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .colour-swatch-role {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-top: 4px;
+  }
+
+  .swatch-black { background: #000000; border: 1px solid #222; }
+  .swatch-red { background: #EA1821; }
+  .swatch-white { background: #FFFFFF; color: #000; }
+
+  .colour-secondary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 2px;
+    height: 140px;
+  }
+
+  .swatch-midnight { background: #180161; }
+  .swatch-violet { background: #4F1787; }
+  .swatch-orange { background: #FB773C; }
+  .swatch-pink { background: #EB3678; }
+
+  /* TYPOGRAPHY */
+  .type-showcase {
+    margin-top: 60px;
+    border: 1px solid var(--dark-border);
+  }
+
+  .type-row {
+    padding: 48px;
+    border-bottom: 1px solid var(--dark-border);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .type-row:last-child { border-bottom: none; }
+
+  .type-meta-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .type-meta-name { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .type-meta-detail { font-size: 11px; color: #555; line-height: 1.7; }
+
+  .type-display-sample {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .type-display-italic {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 54px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.1;
+    color: #888;
+  }
+
+  .type-body-sample {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #aaa;
+  }
+
+  .type-caps-sample {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  /* TREATMENT SYSTEM */
+  .treatment-universal {
+    margin-top: 60px;
+    border: 2px solid var(--red);
+    padding: 48px;
+    position: relative;
+  }
+
+  .treatment-universal-label {
+    position: absolute;
+    top: -12px; left: 32px;
+    background: var(--black);
+    padding: 0 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .treatment-universal h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .treatment-universal p { font-size: 13px; color: #888; line-height: 1.8; margin-bottom: 12px; }
+  .treatment-universal p:last-child { margin-bottom: 0; }
+
+  .treatment-layers {
+    display: flex;
+    gap: 2px;
+    margin-top: 32px;
+  }
+
+  .treatment-layer {
+    flex: 1;
+    background: var(--dark-card);
+    padding: 28px 24px;
+    border-top: 2px solid var(--dark-border);
+  }
+
+  .treatment-layer.active { border-top-color: var(--red); }
+
+  .treatment-layer-num {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .treatment-layer h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .treatment-layer p { font-size: 11px; color: #666; line-height: 1.7; }
+
+  .treatment-named {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 2px;
+    background: var(--dark-border);
+  }
+
+  .treatment-card {
+    background: var(--dark-card);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .treatment-card::before {
+    content: attr(data-letter);
+    position: absolute;
+    top: 16px; right: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--dark-border);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .treatment-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .treatment-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .treatment-card-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .treatment-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .treatment-card ul li {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .treatment-card ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+  }
+
+  /* FILTER SPEC */
+  .filter-spec {
+    margin-top: 60px;
+    border: 1px solid var(--dark-border);
+  }
+
+  .filter-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--dark-border);
+  }
+
+  .filter-row:last-child { border-bottom: none; }
+
+  .filter-label {
+    padding: 28px 28px;
+    border-right: 1px solid var(--dark-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .filter-label-name {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+
+  .filter-label-desc { font-size: 11px; color: #555; }
+
+  .filter-levels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filter-level {
+    padding: 28px 24px;
+    border-right: 1px solid var(--dark-border);
+  }
+
+  .filter-level:last-child { border-right: none; }
+
+  .filter-level-name {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .filter-level-name.low { color: #555; }
+  .filter-level-name.med { color: #888; }
+  .filter-level-name.high { color: var(--red); }
+
+  .filter-level-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .filter-level-note { font-size: 11px; color: #555; }
+
+  /* RESCUE STACK */
+  .rescue-stack {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .rescue-level {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 32px;
+    align-items: center;
+    padding: 32px 40px;
+    background: var(--dark-card);
+    border-left: 3px solid var(--dark-border);
+    transition: border-color 0.2s;
+  }
+
+  .rescue-level:nth-child(1) { border-left-color: #333; }
+  .rescue-level:nth-child(2) { border-left-color: #555; }
+  .rescue-level:nth-child(3) { border-left-color: #888; }
+  .rescue-level:nth-child(4) { border-left-color: var(--red); }
+
+  .rescue-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--dark-border);
+    line-height: 1;
+  }
+
+  .rescue-content h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .rescue-content p { font-size: 12px; color: #666; line-height: 1.6; }
+
+  .rescue-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+
+  .rescue-badge.try-first { color: #555; border: 1px solid #333; }
+  .rescue-badge.if-needed { color: #888; border: 1px solid #555; }
+  .rescue-badge.last-resort { color: var(--red); border: 1px solid var(--red); }
+
+  /* ROW CAMPAIGNS */
+  .campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: var(--dark-border);
+  }
+
+  .campaign-card {
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .campaign-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+  }
+
+  .campaign-card.dark-red { background: #0A0A0A; }
+  .campaign-card.dark-red::before { background: radial-gradient(circle at 80% 20%, #EA1821, transparent 60%); opacity: 0.3; }
+
+  .campaign-card.midnight { background: #060428; }
+  .campaign-card.midnight::before { background: radial-gradient(circle at 80% 20%, #180161, transparent 60%); opacity: 0.5; }
+
+  .campaign-card.neutral { background: #0A0A0A; }
+
+  .campaign-card.orange { background: #0A0A0A; }
+  .campaign-card.orange::before { background: radial-gradient(circle at 80% 20%, #FB773C, transparent 60%); opacity: 0.25; }
+
+  .campaign-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .campaign-card.midnight .campaign-eyebrow { color: #7B5AFF; }
+  .campaign-card.orange .campaign-eyebrow { color: var(--orange); }
+  .campaign-card.neutral .campaign-eyebrow { color: #666; }
+
+  .campaign-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  .campaign-card p { font-size: 12px; color: #777; line-height: 1.7; max-width: 320px; }
+
+  .campaign-swatch {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .campaign-swatch-dot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+  }
+
+  /* GRID RULES */
+  .grid-rules {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--dark-border);
+  }
+
+  .grid-rule-card {
+    background: var(--dark-card);
+    padding: 40px 32px;
+  }
+
+  .grid-rule-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--dark-border);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .grid-rule-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .grid-rule-card p { font-size: 12px; color: #666; line-height: 1.7; }
+
+  /* DECISION TREE */
+  .decision-tree {
+    margin-top: 60px;
+    border: 1px solid var(--dark-border);
+    padding: 48px;
+  }
+
+  .decision-tree h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .decision-step {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .decision-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 40px;
+    width: 1px;
+    height: calc(100% + 0px);
+    background: var(--dark-border);
+  }
+
+  .decision-dot {
+    width: 40px; height: 40px;
+    border: 1px solid var(--dark-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    flex-shrink: 0;
+    background: var(--dark-card);
+    position: relative;
+    z-index: 1;
+  }
+
+  .decision-dot.action { border-color: var(--red); color: var(--red); }
+
+  .decision-body {
+    padding-bottom: 40px;
+    flex: 1;
+  }
+
+  .decision-step:last-child .decision-body { padding-bottom: 0; }
+
+  .decision-question {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding-top: 8px;
+  }
+
+  .decision-answer { font-size: 12px; color: #666; line-height: 1.7; }
+  .decision-answer strong { color: var(--white); }
+
+  /* NEVER DO */
+  .never-list {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .never-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    background: var(--dark-card);
+    overflow: hidden;
+  }
+
+  .never-num {
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--white);
+  }
+
+  .never-text {
+    padding: 20px 28px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+  }
+
+  /* WORKFLOW */
+  .workflow-steps {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .workflow-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    background: var(--dark-card);
+  }
+
+  .workflow-step-num {
+    background: var(--dark-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--muted);
+  }
+
+  .workflow-step-body { padding: 28px 32px; }
+
+  .workflow-step-body h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .workflow-step-body p { font-size: 12px; color: #666; line-height: 1.7; }
+
+  /* LOGO RULES */
+  .logo-rules {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--dark-border);
+  }
+
+  .logo-rule-card {
+    background: var(--dark-card);
+    padding: 40px;
+  }
+
+  .logo-rule-card h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+
+  .logo-rule-card p { font-size: 12px; color: #666; line-height: 1.7; }
+
+  .logo-demo {
+    background: #0A0A0A;
+    border: 6px solid #000;
+    aspect-ratio: 1;
+    position: relative;
+    margin-top: 24px;
+    max-width: 200px;
+    outline: 1px solid #222;
+  }
+
+  .logo-demo-mark {
+    position: absolute;
+    bottom: 8%; right: 8%;
+    font-family: 'Playfair Display', serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.8;
+  }
+
+  .logo-demo-border-label {
+    position: absolute;
+    top: -20px; left: 0;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* FILE NAMING */
+  .file-naming {
+    margin-top: 48px;
+    background: var(--dark-card);
+    padding: 40px;
+    border-left: 3px solid var(--red);
+  }
+
+  .file-naming h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+
+  .file-naming-formula {
+    font-family: 'Montserrat', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .file-naming-example {
+    font-family: 'Montserrat', monospace;
+    font-size: 12px;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-logo">Nairoreel Productions</div>
+    <div class="cover-meta">Brand Kit<br>Version 2 — 2026</div>
+  </div>
+  <div class="cover-center">
+    <div class="cover-eyebrow">Instagram Identity System</div>
+    <div class="cover-title">Brand<br><em>Kit.</em></div>
+    <div class="cover-subtitle">The complete visual system for the Nairoreel Productions Instagram grid</div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-version">V2 — April 2026</div>
+    <div class="cover-rule"></div>
+  </div>
+</div>
+
+<!-- 01 PHILOSOPHY -->
+<section>
+  <div class="page">
+    <div class="section-label">01</div>
+    <div class="section-title">Brand Philosophy</div>
+    <div class="section-body">Young creative studio — confident, professional, with a hint of fun. Not corporate. The grid should look like a bunch of talented young people running a serious studio.</div>
+
+    <div class="philosophy-grid">
+      <div class="philosophy-card accent" data-num="1">
+        <h3>Every post passes through the same machine.</h3>
+        <p>The source material will always vary — different clients, colours, scenes. What cannot vary is the treatment. Every post gets the border. Every post gets the grain. No exceptions.</p>
+      </div>
+      <div class="philosophy-card" data-num="2">
+        <h3>The grid is a curation decision, not a documentation habit.</h3>
+        <p>What goes on the main grid is a deliberate design call. Not everything gets posted. Not every scene from a project is the right thumbnail. Choose intentionally.</p>
+      </div>
+      <div class="philosophy-card" data-num="3">
+        <h3>If one post can't fit, split into three.</h3>
+        <p>A project that fights the visual identity on a single post becomes a full row of three. Row-level identity — paired with border and grain — can carry anything.</p>
+      </div>
+      <div class="philosophy-card" data-num="4">
+        <h3>Openbook Studio is the benchmark.</h3>
+        <p>Different content every post, one unmistakable filter. That level of cohesion is the target. The system is what makes it replicable without us in the room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 COLOURS -->
+<section>
+  <div class="page">
+    <div class="section-label">02</div>
+    <div class="section-title">Colour System</div>
+    <div class="section-body">Three primary colours. Four extended palette colours for campaign rows. Every design element uses only these.</div>
+
+    <div class="colour-primary">
+      <div class="colour-swatch swatch-black">
+        <div class="colour-swatch-name">Black</div>
+        <div class="colour-swatch-hex">#000000</div>
+        <div class="colour-swatch-role">Primary — borders, backgrounds, overlays</div>
+      </div>
+      <div class="colour-swatch swatch-red">
+        <div class="colour-swatch-name">Red</div>
+        <div class="colour-swatch-hex">#EA1821</div>
+        <div class="colour-swatch-role">Accent — accent lines, labels, highlights</div>
+      </div>
+      <div class="colour-swatch swatch-white">
+        <div class="colour-swatch-name">White</div>
+        <div class="colour-swatch-hex">#FFFFFF</div>
+        <div class="colour-swatch-role">Light — typography, logomark</div>
+      </div>
+    </div>
+
+    <div class="colour-secondary">
+      <div class="colour-swatch swatch-midnight">
+        <div class="colour-swatch-name">Midnight</div>
+        <div class="colour-swatch-hex">#180161</div>
+        <div class="colour-swatch-role">Campaign row</div>
+      </div>
+      <div class="colour-swatch swatch-violet">
+        <div class="colour-swatch-name">Violet</div>
+        <div class="colour-swatch-hex">#4F1787</div>
+        <div class="colour-swatch-role">Campaign row</div>
+      </div>
+      <div class="colour-swatch swatch-orange">
+        <div class="colour-swatch-name">Orange</div>
+        <div class="colour-swatch-hex">#FB773C</div>
+        <div class="colour-swatch-role">Campaign row</div>
+      </div>
+      <div class="colour-swatch" style="background:#F2F0ED; color:#000;">
+        <div class="colour-swatch-name">Off-White</div>
+        <div class="colour-swatch-hex">#F2F0ED</div>
+        <div class="colour-swatch-role">Light surface</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 TYPOGRAPHY -->
+<section>
+  <div class="page">
+    <div class="section-label">03</div>
+    <div class="section-title">Typography</div>
+    <div class="section-body">Two fonts. Playfair Display for display and editorial moments. Montserrat for UI, labels, and body. Never any other font.</div>
+
+    <div class="type-showcase">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Display</div>
+          <div class="type-meta-name">Playfair Display 900</div>
+          <div class="type-meta-detail">Headlines, hero text.<br>Tight tracking. Bold presence.</div>
+        </div>
+        <div class="type-display-sample">Studio<br>Nairoreel.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Display Italic</div>
+          <div class="type-meta-name">Playfair Display 400 italic</div>
+          <div class="type-meta-detail">Editorial subheads.<br>Contrast with bold weight.</div>
+        </div>
+        <div class="type-display-italic">Production that speaks for itself.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Label</div>
+          <div class="type-meta-name">Montserrat 700 — ALL CAPS</div>
+          <div class="type-meta-detail">Eyebrow labels, tags.<br>Wide letter-spacing always.</div>
+        </div>
+        <div class="type-caps-sample">Brand Film &nbsp;/&nbsp; Behind The Scenes &nbsp;/&nbsp; Production</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Body</div>
+          <div class="type-meta-name">Montserrat 300–400</div>
+          <div class="type-meta-detail">Descriptors, captions.<br>Studio Card panel text only.</div>
+        </div>
+        <div class="type-body-sample">Every project that passes through the studio gets the same visual treatment — regardless of the source material's colour or style.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 TREATMENT SYSTEM -->
+<section>
+  <div class="page">
+    <div class="section-label">04</div>
+    <div class="section-title">Treatment System</div>
+    <div class="section-body">The system that makes every post look like it came from the same studio. A universal base applied to everything, with named treatments for specific content types.</div>
+
+    <!-- Universal Base -->
+    <div class="treatment-universal">
+      <div class="treatment-universal-label">Universal Base — Every Post, No Exceptions</div>
+      <h3>Border + Grain. Always.</h3>
+      <p>Before any other treatment is applied, every single post on the grid gets these two layers. No post skips them.</p>
+      <div class="treatment-layers">
+        <div class="treatment-layer active">
+          <div class="treatment-layer-num">Layer 1</div>
+          <h4>Black Border Frame</h4>
+          <p>6px solid #000000, inset on all four edges. Contains off-brand colours. Signals that this image passed through Nairoreel's hands.</p>
+        </div>
+        <div class="treatment-layer active">
+          <div class="treatment-layer-num">Layer 2</div>
+          <h4>Film Grain Overlay</h4>
+          <p>Monochromatic noise texture at 15% opacity. Unifies the tactile feel across all posts regardless of source colour temperature.</p>
+        </div>
+        <div class="treatment-layer">
+          <div class="treatment-layer-num">Layer 3</div>
+          <h4>Colour Grade</h4>
+          <p>Deepen blacks. Cool temperature shift. Reduce saturation. Strength varies by post — Low, Medium, or High. See Filter Spec.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Named Treatments -->
+    <div style="margin-top: 48px;">
+      <div class="section-label" style="margin-bottom: 24px;">Named Treatments</div>
+    </div>
+    <div class="treatment-named">
+      <div class="treatment-card" data-letter="A">
+        <div class="treatment-card-label">Treatment A</div>
+        <h3>Dark Frame + Label</h3>
+        <div class="treatment-card-sub">For colourful client work that can't be changed</div>
+        <ul>
+          <li>Universal base (border + grain + Filter Medium)</li>
+          <li>Eyebrow label — Montserrat 700, ALL CAPS, white, tracked — bottom-left</li>
+          <li>2px #EA1821 accent line directly above the label</li>
+          <li>Let the image breathe — no headline, no overlay, no logo</li>
+        </ul>
+      </div>
+      <div class="treatment-card" data-letter="B">
+        <div class="treatment-card-label">Treatment B</div>
+        <h3>Dark Overlay + Typography Hero</h3>
+        <div class="treatment-card-sub">For strong visuals needing editorial framing</div>
+        <ul>
+          <li>Universal base + Filter Low</li>
+          <li>50% opacity #000000 overlay across the image</li>
+          <li>Playfair Display headline — 900 weight, white, 2–4 words, large scale</li>
+          <li>Optional: Montserrat ALL CAPS label in #EA1821 above headline</li>
+        </ul>
+      </div>
+      <div class="treatment-card" data-letter="C">
+        <div class="treatment-card-label">Treatment C</div>
+        <h3>Studio Card Split</h3>
+        <div class="treatment-card-sub">For hero shots that need context</div>
+        <ul>
+          <li>Universal base on the image portion</li>
+          <li>Image: 60% of canvas (top or left)</li>
+          <li>#111111 panel: remaining 40%</li>
+          <li>In panel: eyebrow + 2px red line + Playfair headline + optional descriptor</li>
+        </ul>
+      </div>
+      <div class="treatment-card" data-letter="D">
+        <div class="treatment-card-label">Treatment D</div>
+        <h3>Full Dark Composition</h3>
+        <div class="treatment-card-sub">For new planned row campaigns</div>
+        <ul>
+          <li>Full brand palette background — not the source image</li>
+          <li>Source image composited in as a design element</li>
+          <li>Universal base grain across the whole composition</li>
+          <li>Typography as part of the composition, not an overlay</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 NAIROREEL FILTER -->
+<section>
+  <div class="page">
+    <div class="section-label">05</div>
+    <div class="section-title">The Nairoreel Filter</div>
+    <div class="section-body">A reusable post-production layer applied at the design stage — not as an afterthought. Every post gets at least Low strength. Dial up when the source image fights the grid.</div>
+
+    <div class="filter-spec">
+      <div class="filter-row">
+        <div class="filter-label">
+          <div class="filter-label-name">Film Grain</div>
+          <div class="filter-label-desc">Monochromatic noise overlay</div>
+        </div>
+        <div class="filter-levels">
+          <div class="filter-level">
+            <div class="filter-level-name low">Low</div>
+            <div class="filter-level-val">10%</div>
+            <div class="filter-level-note">Barely visible — just presence</div>
+          </div>
+          <div class="filter-level">
+            <div class="filter-level-name med">Medium</div>
+            <div class="filter-level-val">15%</div>
+            <div class="filter-level-note">Standard — most posts</div>
+          </div>
+          <div class="filter-level">
+            <div class="filter-level-name high">High</div>
+            <div class="filter-level-val">20%</div>
+            <div class="filter-level-note">Rescue mode</div>
+          </div>
+        </div>
+      </div>
+      <div class="filter-row">
+        <div class="filter-label">
+          <div class="filter-label-name">Saturation Cut</div>
+          <div class="filter-label-desc">Global desaturation</div>
+        </div>
+        <div class="filter-levels">
+          <div class="filter-level">
+            <div class="filter-level-name low">Low</div>
+            <div class="filter-level-val">−10%</div>
+            <div class="filter-level-note">Post already close to brand</div>
+          </div>
+          <div class="filter-level">
+            <div class="filter-level-name med">Medium</div>
+            <div class="filter-level-val">−20%</div>
+            <div class="filter-level-note">Standard pull</div>
+          </div>
+          <div class="filter-level">
+            <div class="filter-level-name high">High</div>
+            <div class="filter-level-val">−40–50%</div>
+            <div class="filter-level-note">Strong colour rescue</div>
+          </div>
+        </div>
+      </div>
+      <div class="filter-row">
+        <div class="filter-label">
+          <div class="filter-label-name">Colour Grade</div>
+          <div class="filter-label-desc">Shadow tone + temperature</div>
+        </div>
+        <div class="filter-levels">
+          <div class="filter-level">
+            <div class="filter-level-name low">Low</div>
+            <div class="filter-level-val">Subtle</div>
+            <div class="filter-level-note">Deepen blacks slightly, faint cool shift</div>
+          </div>
+          <div class="filter-level">
+            <div class="filter-level-name med">Medium</div>
+            <div class="filter-level-val">Moderate</div>
+            <div class="filter-level-note">Crush blacks, cool blue-grey shift</div>
+          </div>
+          <div class="filter-level">
+            <div class="filter-level-name high">High</div>
+            <div class="filter-level-val">Strong</div>
+            <div class="filter-level-note">Heavy grade — cohesion over preservation</div>
+          </div>
+        </div>
+      </div>
+      <div class="filter-row">
+        <div class="filter-label">
+          <div class="filter-label-name">When to Use</div>
+          <div class="filter-label-desc">Selection guide</div>
+        </div>
+        <div class="filter-levels">
+          <div class="filter-level">
+            <div class="filter-level-name low">Low</div>
+            <div class="filter-level-val" style="font-size:14px;">Dark / Cinematic</div>
+            <div class="filter-level-note">Post is already close. Portraits, dark scenes, B&W.</div>
+          </div>
+          <div class="filter-level">
+            <div class="filter-level-name med">Medium</div>
+            <div class="filter-level-val" style="font-size:14px;">Warm / Neutral</div>
+            <div class="filter-level-note">Warm-toned images, interior shots, golden hour.</div>
+          </div>
+          <div class="filter-level">
+            <div class="filter-level-name high">High</div>
+            <div class="filter-level-val" style="font-size:14px;">Saturated / Bright</div>
+            <div class="filter-level-note">Bright product shots, colourful client work.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 COLOUR RESCUE STACK -->
+<section>
+  <div class="page">
+    <div class="section-label">06</div>
+    <div class="section-title">Colour Rescue Stack</div>
+    <div class="section-body">When the source image colour is too far from the brand, apply levels in order. Stop as soon as the post fits the grid. Most posts never need to go past Level 1.</div>
+
+    <div class="rescue-stack">
+      <div class="rescue-level">
+        <div class="rescue-num">0</div>
+        <div class="rescue-content">
+          <h4>Border + Grain Alone</h4>
+          <p>Apply the universal base with Filter Low or Medium. Try this first — it handles more than you expect. Dark, cinematic, or near-monochrome images often need nothing else.</p>
+        </div>
+        <div class="rescue-badge try-first">Try First</div>
+      </div>
+      <div class="rescue-level">
+        <div class="rescue-num">1</div>
+        <div class="rescue-content">
+          <h4>Row-Level Identity</h4>
+          <p>Place the post in a row where the campaign colour carries the group. The surrounding posts do the cohesion work. Combine with Filter Medium. The row reads as intentional even if one post is off.</p>
+        </div>
+        <div class="rescue-badge if-needed">If Needed</div>
+      </div>
+      <div class="rescue-level">
+        <div class="rescue-num">2</div>
+        <div class="rescue-content">
+          <h4>Desaturation</h4>
+          <p>Reduce global saturation 30–60% with Filter High. The image moves toward neutral dark. Keeps the image readable and recognisable while pulling it into the brand world.</p>
+        </div>
+        <div class="rescue-badge if-needed">If Needed</div>
+      </div>
+      <div class="rescue-level">
+        <div class="rescue-num">3</div>
+        <div class="rescue-content">
+          <h4>Monochrome + Accent Typography</h4>
+          <p>Desaturate fully to greyscale. Add a minimal ALL CAPS label in #EA1821 or white, bottom-left, with a 2px red accent line. Only add text if the image genuinely cannot stand alone. Last resort — if it still doesn't work, retire the post or split into 3.</p>
+        </div>
+        <div class="rescue-badge last-resort">Last Resort</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 GRID SYSTEM -->
+<section>
+  <div class="page">
+    <div class="section-label">07</div>
+    <div class="section-title">Grid &amp; Row System</div>
+    <div class="section-body">The grid reads in rows of 3. Each row is a visual campaign — shared colour, mood, and content type. This is the primary tool for creating cohesion when individual posts vary.</div>
+
+    <div class="campaign-grid">
+      <div class="campaign-card dark-red">
+        <div class="campaign-eyebrow">Campaign Row 01</div>
+        <h3>Dark Red</h3>
+        <p>Cinematic, dramatic, high-energy. Studio at its most confident. Shadow tone has a faint red undertone.</p>
+        <div class="campaign-swatch">
+          <div class="campaign-swatch-dot" style="background:#000;border:1px solid #333;"></div>
+          <div class="campaign-swatch-dot" style="background:#EA1821;"></div>
+          <div class="campaign-swatch-dot" style="background:#FFFFFF;"></div>
+        </div>
+      </div>
+      <div class="campaign-card midnight">
+        <div class="campaign-eyebrow">Campaign Row 02</div>
+        <h3>Midnight</h3>
+        <p>Deep, cinematic, technical. VFX, 3D, and motion work. Shadow tone has a faint #180161 midnight undertone.</p>
+        <div class="campaign-swatch">
+          <div class="campaign-swatch-dot" style="background:#060428;border:1px solid #333;"></div>
+          <div class="campaign-swatch-dot" style="background:#180161;"></div>
+          <div class="campaign-swatch-dot" style="background:#4F1787;"></div>
+        </div>
+      </div>
+      <div class="campaign-card neutral">
+        <div class="campaign-eyebrow">Campaign Row 03</div>
+        <h3>Neutral Dark</h3>
+        <p>Human, documentary, warm but controlled. The studio behind the studio. Strictly neutral grade — no colour cast.</p>
+        <div class="campaign-swatch">
+          <div class="campaign-swatch-dot" style="background:#0A0A0A;border:1px solid #333;"></div>
+          <div class="campaign-swatch-dot" style="background:#333;"></div>
+          <div class="campaign-swatch-dot" style="background:#FFFFFF;"></div>
+        </div>
+      </div>
+      <div class="campaign-card orange">
+        <div class="campaign-eyebrow">Campaign Row 04</div>
+        <h3>Orange Burst</h3>
+        <p>Warm, energetic, personality-forward. Allow warm amber-orange in highlights. Shadows stay dark and neutral.</p>
+        <div class="campaign-swatch">
+          <div class="campaign-swatch-dot" style="background:#0A0A0A;border:1px solid #333;"></div>
+          <div class="campaign-swatch-dot" style="background:#FB773C;"></div>
+          <div class="campaign-swatch-dot" style="background:#FFFFFF;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <div class="section-label" style="margin-bottom: 24px;">Grid Rules</div>
+    </div>
+    <div class="grid-rules">
+      <div class="grid-rule-card">
+        <div class="grid-rule-num">01</div>
+        <h4>The grid reads in rows, not posts.</h4>
+        <p>Design each row as a campaign. Three posts, one shared mood. The viewer's eye scans left to right — make that scan feel intentional.</p>
+      </div>
+      <div class="grid-rule-card">
+        <div class="grid-rule-num">02</div>
+        <h4>If one post can't fit — split it into three.</h4>
+        <p>A project that fights the grid as a single post becomes a full row of three. Row-level identity, border, and grain can carry any source material.</p>
+      </div>
+      <div class="grid-rule-card">
+        <div class="grid-rule-num">03</div>
+        <h4>Pick the right scene, not the most complete one.</h4>
+        <p>For projects with multiple scenes, pick the thumbnail that needs the least treatment to belong. If a scene benefits from simple graphic design on the thumbnail, do that instead.</p>
+      </div>
+      <div class="grid-rule-card">
+        <div class="grid-rule-num">04</div>
+        <h4>Not everything goes on the main grid.</h4>
+        <p>Event flyers, client deliverables, raw exports — these go to Reels or stories where appropriate, unless framed with Treatment A. The main grid is curated, not documented.</p>
+      </div>
+      <div class="grid-rule-card">
+        <div class="grid-rule-num">05</div>
+        <h4>Reels and Carousels follow the same rules.</h4>
+        <p>Reels thumbnail must be intentionally designed — not the auto-generated frame. Carousel first image must align with grid-level visual identity.</p>
+      </div>
+      <div class="grid-rule-card">
+        <div class="grid-rule-num">06</div>
+        <h4>The thumbnail is a design decision.</h4>
+        <p>The cover image for any piece of content is chosen and designed — it is not a default export. Treat it as a post in its own right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 LOGO PLACEMENT -->
+<section>
+  <div class="page">
+    <div class="section-label">08</div>
+    <div class="section-title">Logo Use</div>
+    <div class="section-body">Minimal. The grid is already ours — we don't need to stamp every post. Use the logomark only when it genuinely enhances the design, or when it functions as a graphic element rather than a signature.</div>
+
+    <div class="logo-rules">
+      <div class="logo-rule-card">
+        <h4>When to Use</h4>
+        <p>Only when the logo actively improves the composition — as a design element that earns its place. Not as a default watermark. Not out of habit. If removing it makes the post look cleaner, remove it.</p>
+        <div class="logo-demo">
+          <div class="logo-demo-border-label">6px black border</div>
+          <div class="logo-demo-mark">NRR</div>
+        </div>
+      </div>
+      <div class="logo-rule-card">
+        <h4>If Used — Placement &amp; Version</h4>
+        <p>Bottom-right corner only. White version only. 8% of canvas width. No other position, no other colour, no outline, no shadow. Do not scale above 10% of canvas width.</p>
+        <br>
+        <h4 style="margin-top:0;">Default Assumption</h4>
+        <p>For most posts: no logo. The border, grain, and treatment do the branding. The grid as a whole signals the studio — individual posts do not need to repeat that message on every frame.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 DECISION TREE -->
+<section>
+  <div class="page">
+    <div class="section-label">09</div>
+    <div class="section-title">Decision Tree</div>
+    <div class="section-body">Use this when you have a post or thumbnail to design and aren't sure which treatment to apply.</div>
+
+    <div class="decision-tree">
+      <h3>What treatment does this post need?</h3>
+
+      <div class="decision-step">
+        <div class="decision-dot">1</div>
+        <div class="decision-body">
+          <div class="decision-question">Is the source image dark, cinematic, or near-monochrome?</div>
+          <div class="decision-answer"><strong>Yes →</strong> Apply universal base + Filter Low. Done. No further treatment needed.</div>
+        </div>
+      </div>
+
+      <div class="decision-step">
+        <div class="decision-dot">2</div>
+        <div class="decision-body">
+          <div class="decision-question">Is the image warm-toned or moderately colourful?</div>
+          <div class="decision-answer"><strong>Yes →</strong> Apply universal base + Filter Medium. Check if it sits in the grid. If yes, done. If still too warm, continue.</div>
+        </div>
+      </div>
+
+      <div class="decision-step">
+        <div class="decision-dot">3</div>
+        <div class="decision-body">
+          <div class="decision-question">Can row-level identity carry it? (Place in a matching campaign row)</div>
+          <div class="decision-answer"><strong>Yes →</strong> Assign to appropriate campaign row + Filter Medium. The row does the cohesion work. Done.<br><strong>No →</strong> Continue.</div>
+        </div>
+      </div>
+
+      <div class="decision-step">
+        <div class="decision-dot">4</div>
+        <div class="decision-body">
+          <div class="decision-question">Is this a client deliverable or event flyer?</div>
+          <div class="decision-answer"><strong>Yes →</strong> Apply Treatment A (Dark Frame + Label) to frame it as studio output. Or move to Reels / stories if the graphic style is incompatible.<br><strong>No →</strong> Continue.</div>
+        </div>
+      </div>
+
+      <div class="decision-step">
+        <div class="decision-dot">5</div>
+        <div class="decision-body">
+          <div class="decision-question">Is there a better scene or thumbnail from the same project?</div>
+          <div class="decision-answer"><strong>Yes →</strong> Use that instead. Start over from step 1.<br><strong>No →</strong> Continue.</div>
+        </div>
+      </div>
+
+      <div class="decision-step">
+        <div class="decision-dot">6</div>
+        <div class="decision-body">
+          <div class="decision-question">Can this project be split into 3 posts for a full row?</div>
+          <div class="decision-answer"><strong>Yes →</strong> Split it. Plan the row with a campaign colour. Row identity + border + grain handles the rest.<br><strong>No →</strong> Continue.</div>
+        </div>
+      </div>
+
+      <div class="decision-step">
+        <div class="decision-dot action">7</div>
+        <div class="decision-body">
+          <div class="decision-question">Apply Level 3 — Monochrome + Accent Typography</div>
+          <div class="decision-answer">Desaturate fully. Add minimal #EA1821 label bottom-left with 2px accent line. Apply Filter High. If it still doesn't work — <strong>move it to Reels or stories</strong> where appropriate. Not everything belongs on the main grid.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 WORKFLOW -->
+<section>
+  <div class="page">
+    <div class="section-label">10</div>
+    <div class="section-title">Workflow</div>
+    <div class="section-body">How a post goes from source material to grid. This process applies to new content and to retrofitting existing posts.</div>
+
+    <div class="workflow-steps">
+      <div class="workflow-step">
+        <div class="workflow-step-num">1</div>
+        <div class="workflow-step-body">
+          <h4>Curate — decide what goes on the grid</h4>
+          <p>Is this the right scene? Is there a better thumbnail? Should this be a single post or a 3-post row? Stories or main grid? Make these decisions before opening Canva.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">2</div>
+        <div class="workflow-step-body">
+          <h4>Plan the row</h4>
+          <p>Which campaign row does this post belong to? What are the other two posts in that row? Plan all three before designing any of them so the row reads as intentional.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">3</div>
+        <div class="workflow-step-body">
+          <h4>Apply the treatment in Canva</h4>
+          <p>Use the decision tree to pick the treatment. Apply universal base first (border + grain). Then the Nairoreel Filter at the appropriate strength. Then any named treatment on top.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">4</div>
+        <div class="workflow-step-body">
+          <h4>Check against the row and the grid</h4>
+          <p>Export and place it in context. Does it look like it belongs in the row? Does the row look like it belongs on the grid? If not, adjust the grade strength before posting.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">5</div>
+        <div class="workflow-step-body">
+          <h4>Export and name the file</h4>
+          <p>Export at 1:1 (posts) or 9:16 (Reels cover). Name using the convention below.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="file-naming">
+      <h4>File Naming Convention</h4>
+      <div class="file-naming-formula">YYYY-MM-DD_[campaign]_[content-type]_v[n].jpg</div>
+      <div class="file-naming-example">
+        2026-04-09_dark-red_brand-film_v1.jpg<br>
+        2026-04-09_midnight_3d-visualisation_v2.jpg<br>
+        2026-04-09_neutral-dark_portrait-session_v1.jpg
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 NEVER DO -->
+<section>
+  <div class="page">
+    <div class="section-label">11</div>
+    <div class="section-title">Never Do</div>
+    <div class="section-body">Six rules. If you're about to break one of these, stop and go back to the decision tree.</div>
+
+    <div class="never-list">
+      <div class="never-item">
+        <div class="never-num">1</div>
+        <div class="never-text">Post a raw export to the main grid without border and grain applied.</div>
+      </div>
+      <div class="never-item">
+        <div class="never-num">2</div>
+        <div class="never-text">Use any font other than Playfair Display or Montserrat in any design element.</div>
+      </div>
+      <div class="never-item">
+        <div class="never-num">3</div>
+        <div class="never-text">Add text to a post where the treated image can stand alone — avoid text if you can.</div>
+      </div>
+      <div class="never-item">
+        <div class="never-num">4</div>
+        <div class="never-text">If using the logo: place it anywhere other than bottom-right, or use any version other than white.</div>
+      </div>
+      <div class="never-item">
+        <div class="never-num">5</div>
+        <div class="never-text">Use a colour not in the brand palette for any design element, border, or type.</div>
+      </div>
+      <div class="never-item">
+        <div class="never-num">6</div>
+        <div class="never-text">Post an event flyer or client deliverable directly — frame it with Treatment A or move it to Reels / stories where appropriate.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 NANO BANANA MASTER PROMPT -->
+<section>
+  <div class="page">
+    <div class="section-label">12</div>
+    <div class="section-title">Nano Banana Master Prompt</div>
+    <div class="section-body">Copy the Constant Block into every prompt. Swap the Treatment Block per post. Add a Campaign Block if the post is part of a row. Attach the source image and send.</div>
+
+    <style>
+      .prompt-block {
+        background: var(--dark-card);
+        border-left: 3px solid var(--dark-border);
+        margin-top: 2px;
+        overflow: hidden;
+      }
+      .prompt-block.primary { border-left-color: var(--red); }
+      .prompt-block-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 28px;
+        border-bottom: 1px solid var(--dark-border);
+      }
+      .prompt-block-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--red);
+      }
+      .prompt-block.secondary .prompt-block-label { color: #555; }
+      .prompt-block-tag {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border: 1px solid var(--dark-border);
+        color: var(--muted);
+      }
+      .prompt-block-tag.always { border-color: var(--red); color: var(--red); }
+      .prompt-text {
+        padding: 28px 28px;
+        font-family: 'Montserrat', monospace;
+        font-size: 11.5px;
+        font-weight: 400;
+        color: #999;
+        line-height: 1.9;
+        white-space: pre-wrap;
+      }
+      .prompt-text strong { color: var(--white); font-weight: 600; }
+      .prompt-text em { color: var(--red); font-style: normal; }
+      .prompt-section-head {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 56px;
+        margin-bottom: 16px;
+        color: var(--white);
+      }
+      .prompt-note {
+        font-size: 12px;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+      .prompt-example {
+        background: #0A0A0A;
+        border: 1px solid var(--dark-border);
+        padding: 32px;
+        margin-top: 40px;
+      }
+      .prompt-example-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: #555;
+        margin-bottom: 20px;
+      }
+      .prompt-example-text {
+        font-family: 'Montserrat', monospace;
+        font-size: 11px;
+        color: #777;
+        line-height: 1.9;
+        white-space: pre-wrap;
+      }
+    </style>
+
+    <!-- Constant Block -->
+    <div class="prompt-block primary" style="margin-top: 60px;">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Constant Block</div>
+        <div class="prompt-block-tag always">Paste in every prompt</div>
+      </div>
+      <div class="prompt-text"><strong>INSTRUCTION:</strong> You are applying Nairoreel Productions' brand treatment system to the attached image. This is ADDITIVE design work — preserve all existing image content exactly as it appears. Do not remove, replace, alter, or recompose any part of the original image. Every change is layered on top.
+
+<strong>BRAND TOKENS:</strong>
+- Primary: <em>#000000</em> Black
+- Accent: <em>#EA1821</em> Red
+- Light: <em>#FFFFFF</em> White
+- Surface: <em>#0A0A0A</em> Dark
+- Card: <em>#111111</em> Dark Card
+- Extended: <em>#180161</em> Midnight | <em>#4F1787</em> Violet | <em>#FB773C</em> Orange | <em>#EB3678</em> Pink
+- Display font: Playfair Display — 900 weight, tight tracking
+- UI font: Montserrat — 700 weight, ALL CAPS, wide letter-spacing for labels
+
+<strong>UNIVERSAL BASE</strong> (apply to every post):
+1. Add a 6px solid <em>#000000</em> border frame inset on all four edges
+2. Apply a subtle monochromatic film grain / noise texture overlay at 15% opacity</div>
+    </div>
+
+    <!-- Treatment Blocks -->
+    <div class="prompt-section-head">Treatment Blocks — Swap per post</div>
+    <div class="prompt-note">Pick one. Add it below the Constant Block. Then add a Campaign Block if the post belongs to a row.</div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Filter Low</div>
+        <div class="prompt-block-tag">Dark / Cinematic posts — already close to brand</div>
+      </div>
+      <div class="prompt-text">Apply the universal base. Then apply a light cinematic colour grade: deepen blacks slightly, reduce global saturation by 10%, apply a very subtle cool temperature shift. Keep it natural — the image should still feel like itself, just more cohesive.</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Filter Medium</div>
+        <div class="prompt-block-tag">Warm-toned / moderately colourful posts</div>
+      </div>
+      <div class="prompt-text">Apply the universal base. Then apply a moderate cinematic colour grade: deepen blacks, reduce global saturation by 20%, apply a cool temperature shift (push slightly toward blue-grey, not cyan). The image should feel like it passed through the same camera as the rest of the grid.</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Filter High</div>
+        <div class="prompt-block-tag">Rescue mode — bright or saturated source images</div>
+      </div>
+      <div class="prompt-text">Apply the universal base. Then apply a strong cinematic colour grade: crush the blacks, reduce global saturation by 40–50%, strong cool temperature shift. The image should move significantly toward neutral dark. Prioritise grid cohesion over preserving the original colour temperature.</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Monochrome + Accent</div>
+        <div class="prompt-block-tag">Level 3 — last resort</div>
+      </div>
+      <div class="prompt-text">Apply the universal base. Desaturate the image fully to monochrome (greyscale). Then add minimal typography:
+- Short ALL CAPS label in Montserrat 700, <em>#EA1821</em> red, tight letter-spacing, bottom-left
+- 2px horizontal <em>#EA1821</em> accent line above the label
+No other text. No logo. Do not add a headline unless the image genuinely cannot stand alone.</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Treatment A — Dark Frame + Label</div>
+        <div class="prompt-block-tag">Client work / deliverables framed as studio output</div>
+      </div>
+      <div class="prompt-text">Apply the universal base + Filter Medium colour grade. Then add:
+- Eyebrow label: Montserrat 700, ALL CAPS, white, 1.5px letter-spacing, 11px — infer a short label from the image content (e.g. "PRODUCTION" / "CLIENT WORK" / "BRAND FILM")
+- 2px solid <em>#EA1821</em> horizontal accent line directly above the label
+- Both positioned bottom-left, 20px from the edge, consistent margin
+Do NOT add a headline. Do NOT add a logo. Let the image breathe inside the frame.</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Treatment B — Dark Overlay + Typography Hero</div>
+        <div class="prompt-block-tag">Strong visuals needing editorial framing</div>
+      </div>
+      <div class="prompt-text">Apply the universal base. Then:
+- Apply a 50% opacity <em>#000000</em> overlay across the image
+- Add a bold Playfair Display headline, 900 weight, white, 2–4 words, editorial tone — infer from image content
+- Position: centre-left or bottom-left, large scale
+- Optional: small Montserrat ALL CAPS label in <em>#EA1821</em>, 10px, above the headline
+Apply Filter Low grade on top.</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Treatment C — Studio Card Split</div>
+        <div class="prompt-block-tag">Hero shots needing context — 3D, architecture, technical work</div>
+      </div>
+      <div class="prompt-text">Apply the universal base to the image portion. Then:
+- Image occupies 60% of the canvas (top or left portion)
+- Solid <em>#111111</em> panel occupies the remaining 40%
+- In the panel:
+  · Montserrat 700 ALL CAPS eyebrow label, white, tracked — infer from image (e.g. "3D VISUALISATION")
+  · 2px <em>#EA1821</em> accent line below the label
+  · Playfair Display headline, 700 weight, white, 2–4 words
+  · Optional: one-line descriptor in Montserrat 300, <em>#888888</em>
+- Apply Filter Low grain to the panel as well</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Treatment D — Full Dark Composition</div>
+        <div class="prompt-block-tag">New planned campaigns — maximum brand control</div>
+      </div>
+      <div class="prompt-text">Do not use the source image as a background. Instead:
+- Create a full brand palette background using [SPECIFY: <em>#000000</em> / <em>#0A0A0A</em> / <em>#180161</em> / <em>#4F1787</em>]
+- Composite the source image into the composition as a design element — cropped, masked, or treated
+- Apply the universal base grain across the entire composition
+- Add typographic elements using Playfair Display and Montserrat as needed
+- The source image is a component, not the canvas</div>
+    </div>
+
+    <!-- Campaign Blocks -->
+    <div class="prompt-section-head">Campaign Blocks — Add when post belongs to a row</div>
+    <div class="prompt-note">Append one of these after the Treatment Block to tie the post to its row campaign.</div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Dark Red Row</div>
+        <div class="prompt-block-tag">Campaign 01</div>
+      </div>
+      <div class="prompt-text">ROW: Shift shadow tone slightly warm-red. The blacks should have a faint red undertone, not neutral black.</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Midnight Row</div>
+        <div class="prompt-block-tag">Campaign 02</div>
+      </div>
+      <div class="prompt-text">ROW: Shift shadow tone toward deep blue-violet. Blacks should have a faint <em>#180161</em> midnight undertone.</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Neutral Dark Row</div>
+        <div class="prompt-block-tag">Campaign 03</div>
+      </div>
+      <div class="prompt-text">ROW: Keep the grade strictly neutral — no colour cast in shadows. Pure cool-neutral dark.</div>
+    </div>
+
+    <div class="prompt-block secondary">
+      <div class="prompt-block-header">
+        <div class="prompt-block-label">Orange Burst Row</div>
+        <div class="prompt-block-tag">Campaign 04</div>
+      </div>
+      <div class="prompt-text">ROW: Allow warm amber-orange tones to remain or be amplified slightly in highlights. Shadows stay dark and neutral.</div>
+    </div>
+
+    <!-- Example -->
+    <div class="prompt-example">
+      <div class="prompt-example-label">Example — Post 3 (golden hour portrait, Row 3 Neutral Dark)</div>
+      <div class="prompt-example-text">INSTRUCTION: You are applying Nairoreel Productions' brand treatment system to the attached image. This is ADDITIVE design work — preserve all existing image content exactly as it appears. Do not remove, replace, alter, or recompose any part of the original image.
+
+BRAND TOKENS: Primary #000000, Accent #EA1821, White #FFFFFF...
+UNIVERSAL BASE: 6px black border frame + 15% film grain overlay.
+
+TREATMENT — FILTER MEDIUM:
+Apply the universal base. Then apply a moderate cinematic colour grade: deepen blacks, reduce global saturation by 20%, apply a cool temperature shift. The image should feel like it passed through the same camera as the rest of the grid.
+
+ROW: Keep the grade strictly neutral — no colour cast in shadows. Pure cool-neutral dark.</div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
