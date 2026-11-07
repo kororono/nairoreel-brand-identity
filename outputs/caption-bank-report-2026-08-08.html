@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Instagram Caption Bank + Socials Progress Report</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a1a1a;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    margin: 0;
+  }
+  h1 { font-size: 19pt; margin: 0 0 4px; }
+  h2 {
+    font-size: 13.5pt;
+    margin: 26px 0 8px;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 4px;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 11.5pt;
+    margin: 16px 0 2px;
+    page-break-after: avoid;
+  }
+  .subtitle { color: #555; font-size: 10pt; margin: 0 0 2px; }
+  .meta { color: #777; font-size: 9pt; margin: 0 0 18px; }
+  .cover-note {
+    background: #f4f4f2;
+    border-left: 4px solid #1a1a1a;
+    padding: 10px 14px;
+    margin: 14px 0 22px;
+    font-size: 9.7pt;
+  }
+  .slide-block {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 0 0 12px;
+    page-break-inside: avoid;
+  }
+  .slide-block.status-ready { border-left: 5px solid #2e7d32; }
+  .slide-block.status-bill  { border-left: 5px solid #b8860b; }
+  .slide-block.status-unsure { border-left: 5px solid #b3261e; }
+  .slide-num {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 8.5pt;
+    padding: 1px 7px;
+    border-radius: 3px;
+    margin-right: 6px;
+    font-weight: 600;
+  }
+  .group-title { font-weight: 600; font-size: 11pt; }
+  .tag {
+    display: inline-block;
+    font-size: 8pt;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    font-weight: 600;
+  }
+  .tag.ready { background: #e2f0e3; color: #2e7d32; }
+  .tag.bill { background: #faf1da; color: #8a6200; }
+  .tag.unsure { background: #fbe4e2; color: #b3261e; }
+  .field-label {
+    font-size: 8.3pt;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #888;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .caption-text {
+    white-space: pre-wrap;
+    background: #fbfbfa;
+    border: 1px dashed #ccc;
+    padding: 8px 10px;
+    margin-top: 3px;
+    font-size: 9.6pt;
+  }
+  .bill-quote {
+    font-style: italic;
+    background: #fffaf0;
+    border: 1px dashed #e0c88a;
+    padding: 6px 10px;
+    margin-top: 3px;
+    font-size: 9.6pt;
+  }
+  .not-sure {
+    color: #b3261e;
+    font-weight: 600;
+    margin-top: 3px;
+  }
+  .hashtags, .alt { font-size: 9pt; color: #555; margin-top: 4px; }
+  .action-note {
+    font-size: 9pt;
+    background: #eef2fb;
+    border-left: 3px solid #3457a5;
+    padding: 5px 9px;
+    margin-top: 6px;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 4px; font-size: 9.5pt; }
+  th, td { border: 1px solid #ddd; padding: 5px 8px; text-align: left; vertical-align: top; }
+  th { background: #1a1a1a; color: #fff; font-size: 8.8pt; text-transform: uppercase; letter-spacing: 0.03em; }
+  tr:nth-child(even) td { background: #fafafa; }
+  .status-pill {
+    display: inline-block;
+    font-size: 8.3pt;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+  .pill-live { background: #e2f0e3; color: #2e7d32; }
+  .pill-blocked { background: #fbe4e2; color: #b3261e; }
+  .pill-partial { background: #faf1da; color: #8a6200; }
+  .pill-gap { background: #eee; color: #555; }
+  ul.tight { margin: 4px 0 0 18px; padding: 0; }
+  ul.tight li { margin-bottom: 2px; }
+  .footer-note { font-size: 8.5pt; color: #888; margin-top: 26px; border-top: 1px solid #ddd; padding-top: 8px; }
+  .legend { font-size: 8.7pt; color: #555; margin: 6px 0 18px; }
+  .legend span { margin-right: 14px; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:4px; vertical-align:middle; }
+  .dot.g{background:#2e7d32;} .dot.y{background:#b8860b;} .dot.r{background:#b3261e;}
+</style>
+</head>
+<body>
+
+<h1>Instagram Caption Bank &amp; Socials Progress</h1>
+<p class="subtitle">For Jeanelle — posting reference + current cross-platform status</p>
+<p class="meta">NairoReel Productions · Prepared by Claude Code · 2026-08-08 · Source: Brand Identity/social-content-plan-2026-08.md, Bill's slide-by-slide notes (2026-08-08), nrr-brain platform account pages</p>
+
+<div class="cover-note">
+This report has two parts. <strong>Part 1</strong> is the full 28-slide caption bank for the
+Instagram grid, grouped the way the grid is laid out. Where a caption is fully written and
+ready to post, it's marked <strong>ready</strong>. Where we only have Bill's raw description
+and no finished caption yet, his words are quoted as-is, marked <strong>Bill's description</strong>
+— write the caption once the details are confirmed. Where even Bill's note doesn't give us
+enough to say anything useful, it's marked <strong>not sure</strong> — flag to Bill directly.
+<br><br>
+<strong>Part 2</strong> is where each platform (Instagram, YouTube, Vimeo, LinkedIn, Behance,
+Clutch, Google Business Profile) actually stands right now, so you know what's live vs. still
+pending before posting.
+</div>
+
+<div class="legend">
+  <span><span class="dot g"></span>Ready to post</span>
+  <span><span class="dot y"></span>Bill's description — needs a finished caption</span>
+  <span><span class="dot r"></span>Not sure — check with Bill</span>
+</div>
+
+<h2>Part 1 — Instagram caption bank (28 slides)</h2>
+
+<div class="slide-block status-ready">
+  <span class="slide-num">1</span><span class="group-title">EKUC Camporee — 3D animated promo</span><span class="tag ready">Ready</span>
+  <div class="field-label">Caption</div>
+  <div class="caption-text">"Battle Ready, Armed for the Fight."
+That was the brief from EKUC's youth department for their Pathfinder Camporee — and instead
+of softening it, we built the whole animation around that intensity.
+3D animated event promo, made right here in Nairobi.
+Full breakdown → nairoreelproductions.com/projects/ekuc</div>
+  <div class="hashtags"><strong>Hashtags (first comment):</strong> #3danimation #vfx #blender #cgi #nairobi #kenyacreatives #eventpromo</div>
+  <div class="alt"><strong>Alt text:</strong> "3D-animated promotional still from Nairoreel Productions' EKUC Pathfinder Camporee campaign, Nairobi, Kenya"</div>
+</div>
+
+<div class="slide-block status-bill">
+  <span class="slide-num">2</span><span class="group-title">Nile Basin — NGO documentary</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Nile Basin"</div>
+  <div class="not-sure">Not sure — need the NGO/client name, what the project was for, Brandon's role, roughly when it was shot, and whether the NGO can be named publicly before a caption can be written.</div>
+</div>
+
+<div class="slide-block status-bill">
+  <span class="slide-num">3</span><span class="group-title">Sylvia's graduation + baby shower</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Sylvia's Graduation and I've forgotten the name of the woman — baby shower but she consented"</div>
+  <div class="not-sure">Not sure — the previous draft caption for this slide assumed a family shoot / 50th birthday, which doesn't match. Need the baby-shower subject's name (or confirmation she stays unnamed) before writing the real caption.</div>
+</div>
+
+<div class="slide-block status-bill">
+  <span class="slide-num">4</span><span class="group-title">David and Freshia's wedding</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"David and Freshias Wedding"</div>
+  <div class="field-label">Previous draft caption (needs confirming against the above)</div>
+  <div class="caption-text">Weddings move fast. You don't get a second take on any of it.
+One of the days we love shooting most, because every frame only happens once.
+Wedding photography, shot in Nairobi, Kenya.
+nairoreelproductions.com/our-work#photography</div>
+  <div class="not-sure">Not sure — whether this was paid client work or a favor, and whether David and Freshia can be named/credited in the caption or should stay generic like above.</div>
+  <div class="hashtags"><strong>Hashtags (first comment):</strong> #weddingphotography #nairobiweddings #kenyacreatives #photography #nairobi</div>
+</div>
+
+<div class="slide-block status-ready">
+  <span class="slide-num">5–9</span><span class="group-title">Nairobi Fashion Week (reuse across all 5 slides)</span><span class="tag ready">Ready</span>
+  <div class="field-label">Caption</div>
+  <div class="caption-text">Reading light that keeps changing, no second chances on a frame.
+This is the shoot that ended up anchoring our whole portfolio — Bill's first editorial
+assignment, covering runway, backstage, and the quiet moments in between at Nairobi Fashion
+Week.
+Editorial fashion photography, shot in Nairobi.
+Full series → nairoreelproductions.com/projects/nairobi-fashion-week</div>
+  <div class="hashtags"><strong>Hashtags (first comment):</strong> #fashionphotography #nairobifashionweek #editorialphotography #nairobi #kenyacreatives</div>
+  <div class="alt"><strong>Alt text:</strong> "Editorial fashion photography from Nairobi Fashion Week by Nairoreel Productions"</div>
+</div>
+
+<div class="slide-block status-bill">
+  <span class="slide-num">10</span><span class="group-title">Music video shoot — group</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Kappy, Vunuku Tipsy Gee and Kantel Wadagliz"</div>
+  <div class="not-sure">Not sure — still need the artist/song name, whether it's publicly released, and whether we can tag/credit the artists.</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">11</span><span class="group-title">Music video shoot</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Tipsy Gee and Vunulu"</div>
+  <div class="not-sure">Not sure — same open questions as slide 10 (song name / release status / credit permission).</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">12</span><span class="group-title">Music video shoot — video vixen</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Video Vixen 😅 Kappy and Wadagliz"</div>
+  <div class="not-sure">Not sure — same open questions as slide 10.</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">13</span><span class="group-title">Music video shoot</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Kantel Wadagliz, Vixen, fame.stano"</div>
+  <div class="not-sure">Not sure — same open questions as slide 10.</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">14</span><span class="group-title">Group music vid photo</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Group Music Vid Photo"</div>
+  <div class="not-sure">Not sure — same open questions as slide 10. Once the song/artist/release status is confirmed, slides 10–14 can likely share one caption per the playbook's reuse pattern.</div>
+</div>
+
+<div class="slide-block status-bill">
+  <span class="slide-num">15</span><span class="group-title">Personal portraits</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Judy Lloyd Leyla Marianna"</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">16</span><span class="group-title">Personal portraits — family</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Grandma Mum and Grandma and Lilian"</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">17</span><span class="group-title">Personal portraits — models</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Models, Judy"</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">18</span><span class="group-title">Personal portraits</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Tracey, Michelle"</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">19</span><span class="group-title">Personal portraits</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Selina"</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">21</span><span class="group-title">Personal portraits</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Marianna"</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">22</span><span class="group-title">Personal portraits</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Michelle"</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">24</span><span class="group-title">Personal portraits</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Michelle and Tracey"</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">25</span><span class="group-title">Personal portraits</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Michele"</div>
+</div>
+<div class="slide-block status-bill">
+  <span class="slide-num">26</span><span class="group-title">Personal portraits</span><span class="tag bill">Bill's description</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Michelle"</div>
+</div>
+<div class="slide-block status-ready">
+  <span class="group-title">Slides 15, 16, 17, 18, 19, 21, 22, 24, 25, 26 — shared posting caption</span><span class="tag ready">Ready (names kept private)</span>
+  <div class="field-label">Caption (reuse across all 10 slides above)</div>
+  <div class="caption-text">Some of our favourite frames never had a brief.
+A handful of personal portrait sessions — friends, family, people who let us practice on
+them before a client ever did.
+Portrait photography, shot in Nairobi, Kenya.
+nairoreelproductions.com/our-work#photography</div>
+  <div class="hashtags"><strong>Hashtags (first comment):</strong> #portraitphotography #nairobi #kenyacreatives #naturallight #photography</div>
+  <div class="alt"><strong>Alt text:</strong> "Portrait photography by Nairoreel Productions, Nairobi, Kenya"</div>
+  <div class="action-note">By design, none of the names above (Judy, Lloyd, Leyla, Marianna, Tracey, Michelle, Selina, grandma/mum/Lilian, etc.) go in the public caption — still pending Brandon's explicit sign-off that this is the right call for all of them. Bill's names are listed above purely so you have the context if anyone asks.</div>
+</div>
+
+<div class="slide-block status-ready">
+  <span class="slide-num">20, 23, 27</span><span class="group-title">NRR team studio shoot, Nov 2025</span><span class="tag ready">Ready</span>
+  <div class="field-label">Bill's descriptions (as given)</div>
+  <div class="bill-quote">20th: "Nairoreel Team" · 23rd: "Nairoreel" · 27th: "Nairoreel Team Portraits"</div>
+  <div class="field-label">Caption (reuse across all 3 slides)</div>
+  <div class="caption-text">We're usually behind the camera, not in front of it.
+In November 2025 we booked a studio and pointed the lens at ourselves for once — the three
+of us who actually run this thing.
+Studio portrait session, Nairobi.
+Meet the team → nairoreelproductions.com/us</div>
+  <div class="hashtags"><strong>Hashtags (first comment):</strong> #behindthescenes #studioportrait #nairobi #kenyacreatives #buildinginpublic</div>
+  <div class="alt"><strong>Alt text:</strong> "Studio portrait of the Nairoreel Productions team, Nairobi, Kenya"</div>
+</div>
+
+<div class="slide-block status-ready">
+  <span class="slide-num">28</span><span class="group-title">Tranzit teaser throwback (confirmed)</span><span class="tag ready">Ready</span>
+  <div class="field-label">Bill's description (as given)</div>
+  <div class="bill-quote">"Animation Showcase"</div>
+  <div class="field-label">Caption — confirmed this is the Tranzit teaser, shot ~2 years before release</div>
+  <div class="caption-text">Before Tranzit was Tranzit, it was a teaser we shot two years ago.
+A throwback to where the idea actually started, long before the CGI short film that's out
+now.
+Early footage behind our CGI short film Tranzit, made in Nairobi.
+See where it ended up → nairoreelproductions.com/projects/tranzit</div>
+  <div class="hashtags"><strong>Hashtags (first comment):</strong> #throwback #cgi #3danimation #nairobi #kenyacreatives</div>
+</div>
+
+<h3>Not on the grid — dedicated Tranzit post (planned, not yet posted)</h3>
+<div class="slide-block status-ready">
+  <span class="group-title">New standalone Instagram post: Tranzit video + 2 carousel stills</span><span class="tag ready">Caption ready — post itself not live</span>
+  <div class="action-note"><strong>Current status:</strong> only the Tranzit <em>video</em> (Part 1) is up on Instagram so far — the carousel stills below have not been posted as their own dedicated post yet.</div>
+  <div class="field-label">Caption</div>
+  <div class="caption-text">The clock is real. Everything else in this frame is fully computer-generated.
+Tranzit is a short, fast-paced CGI film about the delivery of a mysterious case — the
+vehicle, the forest road, the fog, all built and rendered from scratch in Blender, with
+EmberGen handling the drift smoke.
+3D CGI short film, made in Nairobi, Kenya.
+Part one is out now → nairoreelproductions.com/projects/tranzit</div>
+  <div class="hashtags"><strong>Hashtags (first comment):</strong> #cgi #3danimation #blender #vfx #shortfilm #nairobi #kenyacreatives</div>
+  <div class="alt"><strong>Alt text (video cover):</strong> "Still from Tranzit, a fully CGI short film by Nairoreel Productions, Nairobi"</div>
+  <div class="alt"><strong>Alt text (carousel 1):</strong> "Overhead drone-angle CGI still of the forest-road chase from Tranzit" (tranzit-01-drone-overhead)</div>
+  <div class="alt"><strong>Alt text (carousel 2):</strong> "CGI still of the briefcase countdown timer from Tranzit" (tranzit-06-briefcase-timer)</div>
+</div>
+
+<h2>Part 2 — Socials progress: what's live vs. still open</h2>
+<p style="font-size:9.5pt; color:#555; margin-top:-4px;">Snapshot as of 2026-08-08. Sourced from the platform account pages in the brain and the live handoff queue.</p>
+
+<table>
+<tr><th style="width:16%">Platform</th><th style="width:12%">Status</th><th>What's actually done</th><th>What's still open</th></tr>
+<tr>
+  <td><strong>Instagram</strong></td>
+  <td><span class="status-pill pill-partial">Bio live, grid posting not started</span></td>
+  <td>Bio, name field, 28-slide grid curated (108 images), caption bank now built (this report).</td>
+  <td>None of the grid slides are posted yet. Waiting on the "not sure" items above from Bill, then Jeanelle to post manually per Part 1.</td>
+</tr>
+<tr>
+  <td><strong>YouTube</strong></td>
+  <td><span class="status-pill pill-partial">Live, 1 video up</span></td>
+  <td>Channel created and live (youtube.com/@NairoreelProductions). Tranzit Part 1 published — first and only video so far. Homepage schema already links to it.</td>
+  <td>Title still reads "TRANZIT" instead of the SEO-formula title — needs retitling, not re-uploading. No channel description/keywords set yet, no channel banner (no brand asset exists). KFC, Reload, EKUC, Raila Tribute, Costa Archive videos not uploaded yet (Brandon uploads the files; Cowork adds title/description/tags after — task queued: <em>2026-08-03-youtube-vimeo-metadata</em>, still pending).</td>
+</tr>
+<tr>
+  <td><strong>Vimeo</strong></td>
+  <td><span class="status-pill pill-partial">Live, 3 videos up</span></td>
+  <td>Profile live and public (vimeo.com/user240606904). Bio, location, email set. 3 videos already uploaded: Raila Odinga Tribute, Reload, KFC — under generic titles.</td>
+  <td>Those 3 titles/descriptions still need editing to match the YouTube-formula versions. EKUC, Costa Archive and Tranzit are missing entirely — Brandon needs to upload the files first. Same pending task as YouTube above.</td>
+</tr>
+<tr>
+  <td><strong>LinkedIn (Company Page)</strong></td>
+  <td><span class="status-pill pill-partial">Live, fully filled, zero posts</span></td>
+  <td>Page live (linkedin.com/company/nairoreel-productions), all fields filled — tagline, about, industry, size, specialties, phone, year founded.</td>
+  <td>No post history at all yet — first 5 posts already written (Tranzit, KFC, EKUC, Costa Archive, Reload), queued as <em>2026-08-03-linkedin-posts</em>, still pending. No cover/banner image. Not yet cross-linked to YouTube/Vimeo/Behance (task <em>2026-07-27-crosslink-linkedin</em>, still pending).</td>
+</tr>
+<tr>
+  <td><strong>Behance</strong></td>
+  <td><span class="status-pill pill-blocked">Live profile, zero projects</span></td>
+  <td>Profile live at behance.net/nairoreelproductions, custom URL claimed, headline/city/about filled, correctly linked back to the site.</td>
+  <td>Biggest gap of all the platforms — not a single project posted. All 7 project write-ups (Tranzit, KFC, Reload, EKUC, Raila Tribute, Costa Archive, Nairobi Fashion Week) already drafted, queued as <em>2026-08-03-behance-projects</em>, still pending.</td>
+</tr>
+<tr>
+  <td><strong>Clutch</strong></td>
+  <td><span class="status-pill pill-partial">Submitted, under review</span></td>
+  <td>Listing created 2026-07-27, all fields filled, free tier. Clutch quotes 7–10 business days before it goes publicly visible.</td>
+  <td>No client reviews on the profile — none fabricated, would need a real review from EKUC or Costa Archive once there's a natural opening.</td>
+</tr>
+<tr>
+  <td><strong>Google Business Profile</strong></td>
+  <td><span class="status-pill pill-blocked">Not publicly visible — blocked</span></td>
+  <td>Signup form fully completed: category, services, description, logo, hidden address all set.</td>
+  <td>Not live at all yet — Google requires a verification video of the studio/equipment before the listing goes public. This is on Brandon to record and submit himself; nothing more Jeanelle or Cowork can do here.</td>
+</tr>
+</table>
+
+<h3>Cross-linking (platforms linking to each other, not just to the website)</h3>
+<ul class="tight">
+  <li>Site → all platforms: <strong>done.</strong> Homepage schema, llms.txt and llms-full.txt all list all 6 profile URLs.</li>
+  <li>Platform → platform (e.g. LinkedIn linking out to YouTube/Vimeo/Behance): <strong>not done yet</strong> — queued task, still pending.</li>
+</ul>
+
+<h3>Net effect for Jeanelle</h3>
+<ul class="tight">
+  <li>The only platform actually ready for new posting activity right now is <strong>Instagram</strong> — everything else is either waiting on Cowork to execute already-written material, or blocked on Brandon (YouTube/Vimeo video uploads, GBP verification video).</li>
+  <li>For Instagram, start with the slides marked <strong>Ready</strong> in Part 1. For anything marked <strong>Bill's description</strong> or <strong>Not sure</strong>, reach out to Bill directly with the specific question noted under that slide before posting.</li>
+</ul>
+
+<div class="footer-note">
+Prepared by Claude Code from <code>Brand Identity/social-content-plan-2026-08.md</code>, the SEO/social playbook
+(<code>nrr-brain/wiki/concepts/concept-social-seo-playbook.md</code>), the platform account pages in
+<code>nrr-brain/wiki/entities/</code>, and Bill's slide-by-slide notes relayed 2026-08-08. Nothing above is invented —
+where information wasn't available it's marked "not sure" rather than guessed.
+</div>
+
+</body>
+</html>
